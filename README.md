@@ -2339,11 +2339,12 @@
                     { text: 'Sleep Hygiene', action: 'showSleepTips()' }
                 ];
             } else if (message.includes('okay') || message.includes('fine') || message.includes('good')) {
-                response = "I'm glad to hear you're feeling okay! It's wonderful when we have moments of stability. Is there anything specific you'd like to work on or any way I can support your continued wellness?";
+                response = "I'm glad to hear you're feeling okay! It's wonderful when we have moments of stability. This is actually a great time to build on your wellness foundation and develop habits that can help you thrive even more.";
                 suggestions = [
-                    { text: 'Daily Mindfulness', action: 'startMeditation()' },
-                    { text: 'Wellness Tips', action: 'respondToBot("How can I maintain good mental health?")' },
-                    { text: 'Breathing Practice', action: 'startBreathingExercise()' }
+                    { text: 'Daily Wellness Tips', action: 'showDailyWellnessTips()' },
+                    { text: 'Mindfulness Practice', action: 'startMeditation()' },
+                    { text: 'Preventive Care Tips', action: 'showPreventiveTips()' },
+                    { text: 'Breathing Exercise', action: 'startBreathingExercise()' }
                 ];
             } else if (message.includes('help') || message.includes('crisis') || message.includes('emergency')) {
                 response = "I'm concerned about you and want to make sure you get the support you need. Please know that there are people who care and want to help. Here are some immediate resources:";
@@ -3566,6 +3567,37 @@
                 • <strong>Goal Setting:</strong> Work towards more positive mood patterns<br>
                 • <strong>Trigger Identification:</strong> Notice what affects your mental health<br><br>
                 Visit our Mood Tracker section to start your journey! 📈
+            `;
+            addMessage(tips, 'bot');
+        }
+
+        function showDailyWellnessTips() {
+            const tips = `
+                <strong>🌟 Daily Wellness Habits:</strong><br><br>
+                • <strong>Morning Routine:</strong> Start with 5 minutes of gratitude or meditation<br>
+                • <strong>Hydration:</strong> Drink water regularly - dehydration affects mood<br>
+                • <strong>Movement:</strong> Even 10 minutes of walking boosts endorphins<br>
+                • <strong>Sunlight:</strong> Get natural light exposure, especially in the morning<br>
+                • <strong>Connection:</strong> Reach out to one person you care about daily<br>
+                • <strong>Boundaries:</strong> Practice saying "no" to protect your energy<br>
+                • <strong>Evening Wind-down:</strong> Create a calming bedtime routine<br><br>
+                Small daily actions create lasting wellness! ✨
+            `;
+            addMessage(tips, 'bot');
+        }
+
+        function showPreventiveTips() {
+            const tips = `
+                <strong>🛡️ Preventive Mental Health Care:</strong><br><br>
+                • <strong>Regular Check-ins:</strong> Schedule weekly self-assessments<br>
+                • <strong>Stress Management:</strong> Learn your early stress warning signs<br>
+                • <strong>Support Network:</strong> Maintain relationships before you need them<br>
+                • <strong>Healthy Habits:</strong> Consistent sleep, nutrition, and exercise<br>
+                • <strong>Mindfulness Practice:</strong> Daily meditation or breathing exercises<br>
+                • <strong>Professional Support:</strong> Consider therapy even when feeling good<br>
+                • <strong>Hobby Time:</strong> Engage in activities that bring you joy<br>
+                • <strong>Digital Boundaries:</strong> Limit social media and news consumption<br><br>
+                Prevention is the best medicine for mental health! 🌱
             `;
             addMessage(tips, 'bot');
         }
